@@ -29,10 +29,9 @@ function cm.initial_effect(c)
 	end)
 	c:RegisterEffect(e5)
 end
---TODO: detect remove overlay count
 function cm.con(ct,con)
 	return function(e,tp,eg,ep,ev,re,r,rp)
-		return not con or con(e,tp,eg,ep,ev,re,r,rp)
+		return e:GetHandler():GetRemovedOverlayCount()>=ct and (not con or con(e,tp,eg,ep,ev,re,r,rp))
 	end
 end
 function cm.atktg(e,tp,eg,ep,ev,re,r,rp,chk)
