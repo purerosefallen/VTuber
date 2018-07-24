@@ -22,7 +22,7 @@ function cm.initial_effect(c)
 	e4:SetProperty(EFFECT_FLAG_SINGLE_RANGE)
 	e4:SetRange(LOCATION_MZONE)
 	e4:SetValue(function(e,te)
-		return te:GetOwner()~=e:GetOwner() and not Duel.IsExistingMatchingCard(nil,tp,LOCATION_MZONE,0,e:GetHandler())
+		return te:GetOwner()~=e:GetOwner() and not Duel.IsExistingMatchingCard(nil,tp,LOCATION_MZONE,0,1,e:GetHandler())
 	end)
 	c:RegisterEffect(e4)
 end
